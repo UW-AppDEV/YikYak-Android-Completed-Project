@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Forum</string>
+    <string name="action_new_thread">New Thread</string>
+    <string name="title_activity_new_thread">NewThread</string>
+    <string name="title_activity_thread">Thread</string>
+</resources>
