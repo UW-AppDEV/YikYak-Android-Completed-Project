@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,11 +43,11 @@ public class MainActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
 
         arrayList = new ArrayList<String>();
-        arrayList.add("thread1");
-        arrayList.add("thread2");
-        arrayList.add("thread3");
-        arrayList.add("thread4");
-        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, arrayList);
+//        arrayList.add("thread1");
+//        arrayList.add("thread2");
+//        arrayList.add("thread3");
+//        arrayList.add("thread4");
+        adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.thread_list_item, arrayList);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new OnItemClickListener() {
             @Override
@@ -58,9 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        Parse.enableLocalDatastore(this);
-//        Parse.initialize(this, "dbSRgndFtVlkxJUG1AcubhVaP814yfO0HAqrEjaU", "LWqPDlBCoLfhG2bG7ZvjKdNpvcbl8JARkLHcaoWf");
-//        populateMessages();
+        populateMessages();
     }
 
     public void addItem(String text) {
@@ -85,14 +84,16 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-//    public void populateMessages() {
-//        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Thread");
-//        query.findInBackground(new FindCallback<ParseObject>() {
-//            public void done(List<ParseObject> messages, ParseException e) {
-//                for (ParseObject message: messages) {
-//                    addItem(message.getString("title"));
-//                }
-//            }
-//        });
-//    }
+    public void populateMessages() {
+        ParseQuery<ParseObject> query = new ParseQuery<>("Thread");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> messages, ParseException e) {
+                Log.d("parsequery", "done loading, got " + messages.size());
+                for (ParseObject message: messages) {
+                    addItem(message.getString("title"));
+                    Log.d("parsequery", "item: " + message.getString("title"));
+                }
+            }
+        });
+    }
 }
