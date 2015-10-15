@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NewThread"
+            android:name=".NewThreadActivity"
             android:label="@string/title_activity_new_thread"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" >
@@ -32,7 +32,7 @@
                 android:value="ca.uwappdev.forum.MainActivity" />
         </activity>
         <activity
-            android:name=".Thread"
+            android:name=".ThreadActivity"
             android:label="@string/title_activity_thread"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" >

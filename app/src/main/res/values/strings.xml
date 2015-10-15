@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Forum</string>
-    <string name="action_new_thread">New Thread</string>
-    <string name="title_activity_new_thread">NewThread</string>
+    <string name="title_activity_new_thread">New Thread</string>
     <string name="title_activity_thread">Thread</string>
+
+    <string name="thread_title">Title</string>
+    <string name="thread_content">Content</string>
+    <string name="create_thread">Create</string>
 </resources>

@@ -12,6 +12,7 @@ public class ForumApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "dbSRgndFtVlkxJUG1AcubhVaP814yfO0HAqrEjaU", "LWqPDlBCoLfhG2bG7ZvjKdNpvcbl8JARkLHcaoWf");
+//        Parse.initialize(this, "dbSRgndFtVlkxJUG1AcubhVaP814yfO0HAqrEjaU", "LWqPDlBCoLfhG2bG7ZvjKdNpvcbl8JARkLHcaoWf");
+        Parse.initialize(this, "KPJOQLTosEUNDrJTXu4MTxTvZluAMiJauYFdGcqw", "W6wT0CpCYGtWvUPkhGNXBRI4ebpbj7RqfcuONCgX");
     }
 }

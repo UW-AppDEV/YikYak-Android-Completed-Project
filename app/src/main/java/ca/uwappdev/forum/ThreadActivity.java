@@ -1,16 +1,13 @@
 package ca.uwappdev.forum;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import android.content.Intent;
 import android.widget.TextView;
 
-public class Thread extends AppCompatActivity {
+public class ThreadActivity extends AppCompatActivity {
     public final static String threadId = "0";
 
     @Override
@@ -21,9 +18,9 @@ public class Thread extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
-        String threadId = intent.getStringExtra(Thread.threadId);
+        String threadId = intent.getStringExtra(ThreadActivity.threadId);
         TextView threadTitle = (TextView) findViewById(R.id.textView);
-        getSupportActionBar().setTitle("Thread");
+        getSupportActionBar().setTitle("ThreadActivity");
         threadTitle.setText("Mock thread title");
 
     }
